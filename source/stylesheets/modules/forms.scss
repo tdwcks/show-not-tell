@@ -1,0 +1,52 @@
+// =================================================================
+//  Show Not Tell
+//  Forms
+// =================================================================
+
+input, textarea, button {
+	border: 0;
+	outline: 0;
+	font-family: $base-font-family;
+	padding: 10px 20px;
+	font-size: 1em;
+	float: left;
+	margin: 0;
+	@include border-radius(0px);
+	-webkit-appearance: none;
+	color: $colorType;
+	@include transition(all, 0.2s, ease-in-out);
+}
+
+input[type=submit], button { 
+	background: $colorGreen;
+	color: #fff;
+	margin-left: 0;
+	width: 30%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+
+	&:hover {
+		background: darken($colorGreen, 5%);
+	}
+
+	@include mq("small", "max-width") {
+		padding: 11px 20px 12px 20px;
+		font-size: 0.9em;
+	}
+
+	@include mq("nano", "max-width") {
+		clear: both;
+		margin-top: 30px;
+		width: 40%;
+	}
+}
+
+input[type=email] { 
+	width: 70%;
+
+	@include mq("nano", "max-width") {
+		width: 100%;
+		clear: both;
+	}
+}

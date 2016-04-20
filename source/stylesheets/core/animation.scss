@@ -1,0 +1,63 @@
+// =================================================================
+//  Show Not Tell
+//  Animations
+// =================================================================
+
+@include keyframes(fadeIn) {
+  from {
+    @include transform(translateY(-10px));
+    opacity: 0;
+  }
+  to {
+    @include transform(translateY(0));
+    opacity: 1;
+  }
+}
+
+@include keyframes(push) {
+  0% {
+    @include transform(translateY(0px));
+  }
+  50% {
+   @include transform(translateY(10px));
+  }
+  100% {
+  @include transform(translateY(0px));
+  }
+}
+
+@include keyframes(burger) {
+  0%   { width: 0% }
+  50% { width: 0%}
+  100% { width: 100%}
+}
+
+@include keyframes(burgerline_1) {
+  0%   { top: 0px; }
+  50% { top: 7px; }
+  100% { top: 7px; @include transform(rotate(45deg));}
+}
+
+@include keyframes(burgerline_3) {
+  0%   { top: 0px; }
+  50% { top: 7px; }
+  100% { top: 7px; @include transform(rotate(-45deg));}
+}
+
+@include keyframes(burgerline_1_collapse) {
+  0%   { top: 7px; @include transform(rotate(45deg));}
+  50% { top: 7px; }
+  100% { top: 0px; @include transform(rotate(0deg));}
+}
+
+@include keyframes(burgerline_2_collapse) {
+  0%   { top: 7px; @include transform(rotate(-45deg));}
+  50% { top: 7px; }
+  100% { top: 7px; @include transform(rotate(0deg));}
+}
+
+@include keyframes(burgerline_3_collapse) {
+  0%   { top: 7px; @include transform(rotate(-45deg));}
+  50% { top: 7px; }
+  100% { top: 14px; @include transform(rotate(0deg));}
+}

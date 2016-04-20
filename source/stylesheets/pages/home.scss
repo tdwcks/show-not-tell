@@ -1,0 +1,132 @@
+// =================================================================
+//  Show Not Tell
+//  Home
+// =================================================================
+
+.junior-doctors {
+	.hero {
+		padding: 50px 0;
+		background: $colorBlue;
+	}
+}
+
+.blog, .about {
+	.hero {
+		padding: 0 0;
+		height: 500px;
+		width: 100%;
+		background: $colorLightGreen;
+		position: relative;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	@include mq("medium", "max-width") {
+		.hero {
+			height: 400px;
+		}
+	}
+
+	@include mq("small", "max-width") {
+		.hero {height: 320px;}
+	}
+
+	@include mq("extra-small", "max-width") {
+		.hero {
+			height: 320px;
+		}
+
+		.hero img {
+			width: 200%;
+			position: absolute;
+			margin-left: -100%;
+			top: -4%;
+			left: 50%;
+		}
+	}
+
+	@include mq("super-small", "max-width") {
+		.hero {
+			height: 270px;
+		}
+	}
+
+	@include mq("nano", "max-width") {
+		.hero {
+			height: 230px;
+		}
+	}
+}
+
+.about .hero {
+	background: $colorPurple;
+}
+
+.journal .small-discovery {
+	background: $colorBg;
+	padding: 15px 0;
+
+	.discovery-item {
+		display: block;
+		background: #fff;
+		padding-bottom: 20px;
+		margin: 15px 0;
+		min-height: 270px;
+
+		.image {
+			background: $colorRed;
+		}
+
+		h3 {
+			padding-left: 20px;
+		}
+
+		p {
+			margin-left: 20px;
+		}
+	}
+
+	.col-4:nth-child(3) {
+		margin-right: 0;
+	}
+
+	.col-4:nth-child(6) {
+		margin-right: 0;
+	}
+
+	.col-4:nth-child(9) {
+		margin-right: 0;
+	}
+
+	.col-4:nth-child(12) {
+		margin-right: 0;
+	}
+
+	@include mq("extra-small", "max-width") { 
+		.col-4 {
+			width: 100%;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.journal .mail-out {
+	background: $colorRed;
+
+	h2 {
+		border-bottom: 2px solid $colorYellow;
+	}
+
+	input[type=submit] {
+		background: $colorYellow;
+	}
+}

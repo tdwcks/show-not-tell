@@ -1,0 +1,151 @@
+<article class="home"> 
+  <section class="hero">
+    <div class="grid-container">
+      <div class="col-6">
+        <a href="/junior-doctors" class="hero-item bg-blue">
+          <img data-original="images/2.png" class="lazy">
+          <div class="information-holder">
+            <div class="statistics-holder">
+              <span>24/ 50 Participents</span>
+            </div>
+            <div class="writing-holder">
+              <h4>Junior Doctors Sleep</h4>
+              <p>Collecting the sleeping patterns of Junior Doctors</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-3">
+        <a class="hero-item bg-aqua">
+          <img data-original="images/2.png" class="lazy">
+          <div class="information-holder">
+              <h4>Junior Doctors Sleep</h4>
+              <p>Collecting the sleeping patterns of Junior Doctors</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-3">
+        <a class="hero-item bg-yellow">
+          <img data-original="images/2.png" class="lazy">
+          <div class="information-holder">
+              <h4>Junior Doctors Sleep</h4>
+              <p>Collecting the sleeping patterns of Junior Doctors</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="writing">
+    <div class="grid-container">
+      <div class="col-6">
+        <h2>We use the information your phone is already collecting to fuel a political campaign.</h2>
+      </div>
+      <div class="col-6">
+      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
+      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
+      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
+      <%= link_to 'Read More', '/about' %>
+      </div>
+    </div>
+  </section>
+  <section class="discover">
+    <div class="grid-container">
+      <div class="row">
+        <div class="col-6">
+          <a class="discovery-item">
+            <div class="image bg-hot">
+              <img data-original="images/2.png" class="lazy">
+            </div>
+            <div class="statistics-holder">
+              <span>24/ 50 Participents</span>
+            </div>
+            <div class="writing-holder">
+              <h4>Junior Doctors Sleep</h4>
+              <p>Collecting the sleeping patterns of Junior Doctors</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-6">
+          <a class="discovery-item">
+            <div class="image bg-blue">
+              <img data-original="images/2.png" class="lazy">
+            </div>
+            <div class="statistics-holder">
+              <span>24/ 50 Participents</span>
+            </div>
+            <div class="writing-holder">
+              <h4>Junior Doctors Sleep</h4>
+              <p>Collecting the sleeping patterns of Junior Doctors</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <a class="discovery-item">
+          <div class="col-6">
+            <div class="image bg-rust">
+              <img data-original="images/2.png" class="lazy">
+            </div>
+            <div class="statistics-holder">
+              <span>24/ 50 Participents</span>
+            </div>
+            <div class="writing-holder">
+              <h4>Junior Doctors Sleep</h4>
+              <p>Collecting the sleeping patterns of Junior Doctors</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-6">
+          <a class="discovery-item">
+            <div class="image bg-aqua">
+              <img data-original="images/2.png" class="lazy">
+            </div>
+            <div class="statistics-holder">
+              <span>24/ 50 Participents</span>
+            </div>
+            <div class="writing-holder">
+              <h4>Junior Doctors Sleep</h4>
+              <p>Collecting the sleeping patterns of Junior Doctors</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mail-out">
+    <div class="grid-container">
+      <div class="row">
+        <div class="col-6">
+          <h2>Get mail about future collections</h2>
+        </div>
+        <div class="col-6">
+            <form action="//show-not-tell.us13.list-manage.com/subscribe/post?u=67b8136f07a7592b8fe597658&amp;id=4a38ba6576" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67b8136f07a7592b8fe597658_4a38ba6576" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="small-discovery">
+    <div class="grid-container">
+      <div class="row">
+        <h4>Journal</h4>
+      </div>
+      <div class="row">
+        <% blog.articles[0...4].each do |article| %>
+          <div class="col-3">
+          <a class="discovery-item" href="<%= article.url %>">
+            <div class="image">
+              <img data-original="images/journal/<%= article.slug %>/1-small.jpg" class="lazy">
+            </div>
+            <h3><%= article.title %></h3>
+            <p>View Article</p>
+          </a>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </section>
+</article>

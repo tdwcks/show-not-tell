@@ -1,0 +1,55 @@
+// =================================================================
+// 	Show Not Tell
+//	Color
+// =================================================================
+
+$colorWhite: #FFF;
+$colorBlue: #0174C8;
+$colorAqua: #00C4B3;
+$colorYellow: #FFBF3B;
+$colorRust: #DC5F13;
+$colorRed: #FF5B33;
+$colorKal: #00A0AE;
+$colorGreen: #00795F;
+$colorPurple: #684458;
+$colorPink: #F46177;
+$colorLightGreen: #00BC6F;
+$colorHot: #F6323E;
+$colorNature: #709F87;
+$colorSilver: #AAAAAA;
+$colorType: #353535;
+$colorBg: #efefef;
+$colorLines: #E3E9ED;
+
+.bg-blue { background: $colorBlue; }
+.fg-blue { color: $colorBlue; }
+
+.bg-aqua { background: $colorAqua; }
+.fg-aqua { color: $colorAqua; }
+
+.bg-yellow { background: $colorYellow; }
+.fg-yellow { color: $colorYellow; }
+
+.bg-rust { background: $colorRust; }
+.fg-rust { color: $colorRust; }
+
+.bg-red { background: $colorRed; }
+.fg-red { color: $colorRed; }
+
+.bg-kal { background: $colorKal; }
+.fg-kal { color: $colorKal; }
+
+.bg-green { background: $colorGreen; }
+.fg-green { color: $colorGreen; }
+
+.bg-purple { background: $colorPurple; }
+.fg-purple { color: $colorPurple; }
+
+.bg-pink { background: $colorPink; }
+.fg-pink { color: $colorPink; }
+
+.bg-light-green { background: $colorLightGreen; }
+.fg-light-green { color: $colorLightGreen; }
+
+.bg-hot { background: $colorHot; }
+.fg-hot { color: $colorHot; }

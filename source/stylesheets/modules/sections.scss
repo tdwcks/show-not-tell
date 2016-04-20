@@ -1,0 +1,501 @@
+// =================================================================
+// 	Show Not Tell
+//	Sections
+// =================================================================
+article {
+	margin-top: 66px;
+}
+
+.hero {
+	background: $colorBg;
+	padding: 20px 0;
+	box-sizing: border-box;
+	height: auto;
+
+	.hero-item {
+		display: block;
+		height: 400px;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		cursor: pointer;
+
+		img {
+			position: absolute;
+			bottom: 0;
+			width: 200%;
+			left: -50%;
+		}
+
+		.information-holder {
+			width: 100%;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			position: absolute;
+			top: 0;
+			background: #fff;
+		}
+
+		.information-holder span {
+			
+		}
+
+		.information-holder p {
+			color: $colorSilver;
+			padding-bottom: 0;
+		}
+
+		.information-holder .statistics-holder {
+			width: 25%;
+			float: left;
+		}
+
+		.information-holder .writing-holder {
+			width: 50%;
+			margin-left: 5%;
+			float: left;
+		}
+
+		&:hover img {
+			opacity: 0.1em;
+		}
+	}
+
+	.col-3:nth-child(2) .hero-item {
+		
+		.information-holder {
+			bottom: 0;
+			top: auto;
+		}
+
+		img {
+			top: 0;
+			bottom: initial;
+		}
+	}
+
+	.statistic-holder {
+		border-top: 1px solid rgba(255, 255, 255, 0.50);
+		padding: 20px 0;
+
+		h1, h3, h4 {
+			color: #fff;
+		}
+
+		span {
+			font-size: 1em;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		h4 {
+			font-size: 1.1em;
+			color: rgba(255, 255, 255, 0.5);
+			margin-bottom: 10px;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+		}
+
+		&:first-child {
+			margin-top: 50px;
+		}
+	}
+
+	.graph-holder {
+		h4 {
+			color: #fff;
+			padding-left: 0;
+			text-align: center;
+			margin-bottom: 10px;
+			font-size: 0.95em;
+		}
+
+		h4:last-child {
+			text-align: center;
+			margin-top: 10px;
+			color: rgba(255, 255, 255, 0.50);
+		}
+
+		.graph li {
+			list-style-type: none;
+			width: 100%;
+			height: 4px;
+			@include border-radius(3px);
+			background: rgba(255, 255, 255, 0.50);
+		}
+
+		.graph li.active {
+			background: #fff;
+		}
+	}
+
+	@include mq("medium", "max-width") {
+  		.col-3 {
+  			@include span-columns(6);
+  			margin-right: 0;
+
+  			&:last-child {
+  				display: none;
+  			}
+  		}
+	}
+
+	@include mq("small", "max-width") {
+		padding: 30px 0;
+
+  		.col-3, .col-6 {
+  			@include span-columns(12);
+  			margin-bottom: 30px;
+  			margin-right: 0;
+  		}
+
+  		.statistic-holder:first-child {
+			margin-top: 0;
+		}
+
+  		.col-2 {
+  			@include span-columns(12);
+  			margin-bottom: 30px;
+  			margin-left: 0;
+
+ 			&:last-child {
+ 				margin-bottom: 0;
+ 			}
+  		}
+
+  		.col-1 {
+  			@include span-columns(3);
+  			margin-left: 0;
+  			margin-bottom: 30px;
+
+  			&:nth-child(2) {
+  				display: none;
+  			}
+
+  			&:nth-child(3) {
+  				display: none;
+  			}
+
+  			&:nth-child(7) {
+  				margin-right: 0;
+  			}
+  		}
+
+  		.statistics-holder {
+  			display: none;
+  		}
+
+  		.hero-item .information-holder .writing-holder {
+  			width: 100%;
+  			margin-left: 0;
+  		}
+
+  		.col-3 {
+  			margin-bottom: 0;
+  		}
+	}
+
+}
+
+.writing {
+	padding: 70px 0;
+
+	p {
+		font-size: 1.05em;
+		line-height: 1.5;
+		padding: 10px 0;
+		color: lighten($colorType, 10%);
+
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+
+	h4 {
+		color: $colorLightGreen;
+		padding: 10px 0;
+	}
+
+	ul li {
+		color: lighten($colorType, 10%);
+		line-height: 1.4;
+	}
+
+	a {
+		font-size: 1.05em;
+		color: $colorType;
+		border-bottom: 2px solid $colorBlue;
+		margin-top: 10px;
+		display: inline-block;
+		padding-bottom: 3px;
+
+		&:hover {
+			color: $colorBlue;
+		}
+	}
+
+	@include mq("small", "max-width") {
+		padding: 40px 0;
+
+		h2 {
+			margin-bottom: 20px;
+			font-size: 1.6em;
+			line-height: 1.3;
+		}
+
+		.col-6 {
+			@include span-columns(12);
+		}
+	}
+}
+
+.discover {
+	.image {
+		margin-bottom: 30px;
+	}
+
+	.discovery-item {
+		display: block;
+		cursor: pointer;
+	}
+	.statistics-holder {
+		width: 30%;
+		float: left;
+	}
+	.writing-holder {
+		width: 55%;
+		float: right;
+		margin-bottom: 50px;
+	}
+	.writing-holder h4 {
+		color: $colorType;
+	}
+	.writing-holder p {
+		color: $colorSilver;
+	}
+
+	@include mq("extra-small", "max-width") {
+		.col-6 {
+			width: 100%;
+		}
+
+		.writing-holder {
+			width: 60%;
+		}
+	}
+
+	@include mq("nano", "max-width") {
+		.writing-holder, .statistics-holder {
+			width: 100%;
+		}
+
+		.statistics-holder {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.mail-out {
+	padding: 65px 0;
+	background: $colorLightGreen;
+
+	h2 {
+		color: #fff;
+		border-bottom: 2px solid $colorGreen;
+		display: inline-block;
+		padding-bottom: 4px;
+	}
+
+	@include mq("small", "max-width") {
+		h2 {
+			padding-top: 8px;
+			font-size: 1.4em;
+		}
+	}
+
+	@include mq("extra-small", "max-width") {
+		padding: 40px 0;
+
+		.col-6 {
+			width: 100%;
+		}
+
+		h2 {
+			font-size: 1.2em;
+			padding-top: 0;
+			margin-bottom: 30px;
+		}
+ 	}
+
+ 	@include mq("nano", "max-width") {
+ 		h2 {
+ 			font-size: 1em;
+ 		}
+ 	}
+}
+
+.small-discovery {
+	height: auto;
+	padding-bottom: 60px;
+
+	.discovery-item:hover p {
+		color: $colorBlue;
+	}
+
+	h4 {
+		margin: 40px 0;
+		color: $colorType;
+		border-bottom: 2px solid $colorRed;
+		display: inline-block;
+	}
+
+	h3 {
+		margin: 30px 0;
+		font-size: 1em;
+	}
+
+	p {
+		margin: 0;
+		display: inline-block;
+		padding: 0;
+		border-bottom: 2px solid $colorBlue;
+	}
+
+	@include mq("small", "max-width") {
+		.col-3 {
+			@include span-columns(6);
+		}
+	}
+
+	@include mq("extra-small", "max-width") {
+		.col-3 {
+			@include span-columns(12);
+			margin-bottom: 30px;
+		}
+
+		.col-3:nth-child(2) {
+			margin-bottom: 0;
+		}
+
+		.col-3:nth-child(3) {
+			display: none;
+		}
+
+		.col-3:nth-child(4) {
+			display: none;
+		}
+	}
+}
+
+.gallery {
+	padding-bottom: 30px;
+
+	.image {
+		margin-bottom: 30px;
+	}
+
+	@include mq("extra-small", "max-width") {
+		.col-6 {width: 100%;}
+	}
+}
+
+.form {
+	padding: 40px 0;
+	background: $colorAqua;
+
+	h2 {
+		color: #fff;
+		display: inline-block;
+		padding-bottom: 4px;
+	}
+
+	label {
+		width: 100%;
+		color: #fff;
+		text-decoration: uppercase;
+		display: block;
+		clear: both;
+		margin-bottom: 15px;
+	}
+
+	fieldset {
+		@include span-columns(3 of 6);
+		float: left;
+
+		&.last {
+			margin-right: 0;
+		}
+	}
+
+	input, textarea, button {
+		padding: 15px 15px;
+	}
+
+	input[type=email], input[type=text] {
+		margin-bottom: 15px;
+		background: #fff;
+		float: none;
+		color: $colorBlue;
+		width: intinsic;
+		clear: both;
+		display: block;
+		border: 2px solid $colorAqua;
+
+		&:focus {
+			border: 2px solid $colorBlue;
+		}
+	}
+
+	input[type=email], input[type=text] {
+		width: 100%;
+	}
+
+	textarea {
+		width: 100%;
+		color: $colorBlue;
+		resize: none;
+	}
+
+	button {
+		background: $colorBlue;
+		font-size: 0.9em;
+		margin-top: 30px;
+		float: right;
+		width: intrinsic;
+	}
+
+	@include mq("small", "max-width") { 
+
+		h2 {
+			font-size: 1.4em;
+			line-height: 1.5;
+		}
+
+		.col-6 {
+			width: 100%;
+		}
+
+		.col-6:first-child {
+			margin-bottom: 30px;
+		}
+	}
+
+	@include mq("extra-small", "max-width") {
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		fieldset {
+			@include span-columns(6 of 6);
+		}
+	}
+
+	@include mq("nano", "max-width") {
+		h2 {
+			font-size: 1em;
+		}
+	}
+}

@@ -1,0 +1,199 @@
+// =================================================================
+//  Show Not Tell
+//  Header
+// =================================================================
+
+header {
+	width: 100%;
+	padding: 20px 0 18px 0;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #fff;
+
+	a h1 {
+		color: $colorSilver;
+	}
+
+	h1 {
+		font-size: 1em;
+		color: $colorLightGreen;
+		float: left;
+		margin-right: 20px;
+	}
+
+	a h1:before {
+		display: none;
+	}
+
+	nav ul {
+		padding: 0;
+	}
+
+	nav ul li {
+		float: left;
+		list-style-type: none;
+		color: $colorSilver;
+		padding: 0;
+	}
+
+	nav ul li a {
+		color: $colorSilver;
+		padding-right: 20px;
+
+		&:hover {
+			color: $colorBlue;
+		}
+	}
+
+	nav ul li.cta {
+		float: right;
+
+		a {
+			color: $colorRed;
+			padding-right: 0;
+		}
+	}
+
+	.menu-trigger {
+		display: none;
+	}
+
+	@include mq("small", "max-width") {
+		nav ul li.cta {
+			display: none;
+		}
+	}
+
+	@include mq("extra-small", "max-width") {
+		.col-6 {
+			width: 87%;
+		}
+		.col-6:last-child {
+			width: 100%;
+		}
+
+		h1.page-title {
+			width: 100%;
+			margin-top: 10px;
+			padding-bottom: 5px;
+		}
+
+		nav {
+			display: none;
+			border-top: 1px solid $colorLines;
+			width: 100%;
+			height: auto;
+			clear: both;
+			margin: 20px 0 5px 0;
+			padding: 15px 0;
+		}
+
+		nav.active {
+			display: block;
+		}
+
+		nav ul li {
+			opacity: 0;
+
+			@for $i from 1 through 3 {
+     			&:nth-child(#{$i}) {
+        			@include animation--fadedown($i/10);
+      			}
+    		}
+		}
+
+		.burger-holder {
+			float: right;
+			height: 20px;
+			width: 20px;
+			position: relative;
+		}
+
+		.hamburger {
+		  width: 20px;
+		  height: 20px;
+		  position: absolute;
+		  top: 1px;
+		  left: 0;
+		}
+
+		.hamburger .burger {
+		    position: absolute;
+		    background: $colorBlue;
+		    height: 2px;
+		    width: 100%;
+		    margin-bottom: 5px;
+		    clear: both;
+		}
+
+		.hamburger .line-1 {
+		  top: 0;
+		  left: 0;
+		}
+
+		.hamburger .line-2{
+		  top: 7px;
+		  right: 0;
+		}
+
+		.hamburger .line-3 {
+		  left: 0;
+		  top: 14px;
+		}
+
+		.hamburger.cross {
+
+		  .line-1 {
+		    top: 0;
+		    left: 0;
+		    @include animation( burgerline_1 0.5s forwards);
+		    
+		  }
+
+		  .line-2{
+		    top: 7px;
+		    right: 0;
+		    @include animation( burgerline_3 0.5s forwards);
+		  }
+
+		  .line-3 {
+		    left: 0;
+		    top: 16px;
+		    @include animation( burgerline_3 0.5s forwards);
+		  }
+		}
+
+		.hamburger.collapse-burger {
+		  display: block;
+
+		  .burger {
+		    position: absolute;
+		    height: 2px;
+		    width: 100%;
+		    margin-bottom: 6px;
+		    clear: both;
+		  }
+
+		  .line-1 {
+		    top: 0px;
+		    left: 0;
+		    @include animation( burgerline_1_collapse 0.5s forwards);
+		    
+		  }
+
+		  .line-2{
+		    top: 7px;
+		    right: 0;
+		    @include animation( burgerline_2_collapse 0.5s forwards);
+		  }
+
+		  .line-3 {
+		    left: 0;
+		    top: 0px;
+		    @include animation( burgerline_3_collapse 0.5s forwards);
+		  }
+		}
+	}
+}

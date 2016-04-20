@@ -1,0 +1,20 @@
+// =================================================================
+// 	Show Not Tell
+//	Image
+// =================================================================
+
+.image {
+	 @include aspect-ratio(16, 9);
+	 width: 100%;
+	 display: block;
+	 background: #f2f2f2;
+	 @include transition(all, 0.4s, ease-in-out);
+	 overflow: hidden;
+
+	 img {
+	 	position: absolute;
+	 	top: 0;
+	 	left: 0;
+	 	width: 100%;
+	 }
+}

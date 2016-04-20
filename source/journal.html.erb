@@ -1,0 +1,38 @@
+---
+title: Journal
+color: fg-red
+---
+
+<article class="journal"> 
+  <section class="small-discovery">
+    <div class="grid-container">
+        <% blog.articles.each do |article| %>
+          <div class="col-4">
+            <a class="discovery-item" href="<%= article.url %>">
+              <div class="image">
+                <img data-original="images/journal/<%= article.slug %>/1-small.jpg" class="lazy">
+              </div>
+              <h3><%= article.title %></h3>
+              <p>View Article</p>
+            </a>
+          </div>
+      <% end %>
+    </div>
+  </section>
+  <section class="mail-out">
+    <div class="grid-container">
+      <div class="row">
+        <div class="col-6">
+          <h2>Get mail about future collections</h2>
+        </div>
+        <div class="col-6">
+            <form action="//show-not-tell.us13.list-manage.com/subscribe/post?u=67b8136f07a7592b8fe597658&amp;id=4a38ba6576" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67b8136f07a7592b8fe597658_4a38ba6576" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>

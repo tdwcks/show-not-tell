@@ -1,0 +1,235 @@
+// =================================================================
+// 	Show Not Tell
+//	Sections
+// =================================================================
+article {
+	margin-top: 65px;
+}
+
+.hero {
+	background: $colorBg;
+	padding: 20px 0;
+	box-sizing: border-box;
+	height: auto;
+
+	.hero-item {
+		display: block;
+		height: 400px;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		cursor: pointer;
+
+		img {
+			position: absolute;
+			bottom: 0;
+			width: 200%;
+			left: -50%;
+		}
+
+		.information-holder {
+			width: 100%;
+			height: auto;
+			padding: 20px;
+			box-sizing: border-box;
+			position: absolute;
+			top: 0;
+			background: #fff;
+		}
+
+		.information-holder span {
+			
+		}
+
+		.information-holder p {
+			color: $colorSilver;
+			padding-bottom: 0;
+		}
+
+		.information-holder .statistics-holder {
+			width: 25%;
+			float: left;
+		}
+
+		.information-holder .writing-holder {
+			width: 50%;
+			margin-left: 5%;
+			float: left;
+		}
+
+		&:hover img {
+			opacity: 0.1em;
+		}
+	}
+
+	.col-3:nth-child(2) .hero-item {
+		
+		.information-holder {
+			bottom: 0;
+			top: auto;
+		}
+
+		img {
+			top: 0;
+			bottom: initial;
+		}
+	}
+
+	.statistic-holder {
+		border-top: 1px solid rgba(255, 255, 255, 0.50);
+		padding: 20px 0;
+
+		h1, h3, h4 {
+			color: #fff;
+		}
+
+		span {
+			font-size: 1em;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		h4 {
+			font-size: 1.1em;
+			color: rgba(255, 255, 255, 0.5);
+			margin-bottom: 10px;
+		}
+
+		&:last-child {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+		}
+
+		&:first-child {
+			margin-top: 50px;
+		}
+	}
+
+	.graph-holder {
+		h4 {
+			color: #fff;
+			padding-left: 0;
+			text-align: center;
+			margin-bottom: 10px;
+			font-size: 0.95em;
+		}
+
+		h4:last-child {
+			text-align: center;
+			margin-top: 10px;
+			color: rgba(255, 255, 255, 0.50);
+		}
+
+		.graph li {
+			list-style-type: none;
+			width: 100%;
+			height: 4px;
+			@include border-radius(3px);
+			background: rgba(255, 255, 255, 0.50);
+		}
+
+		.graph li.active {
+			background: #fff;
+		}
+	}
+}
+
+.writing {
+	padding: 70px 0;
+
+	p {
+		font-size: 1.05em;
+		line-height: 1.4;
+		padding: 10px 0;
+		color: lighten($colorType, 10%);
+
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+
+	a {
+		font-size: 1.05em;
+		color: $colorType;
+		border-bottom: 2px solid $colorBlue;
+		margin-top: 10px;
+		display: inline-block;
+		padding-bottom: 3px;
+
+		&:hover {
+			color: $colorBlue;
+		}
+	}
+}
+
+.discover {
+	.image {
+		margin-bottom: 30px;
+	}
+
+	.discovery-item {
+		display: block;
+		cursor: pointer;
+	}
+	.statistics-holder {
+		width: 30%;
+		float: left;
+	}
+	.writing-holder {
+		width: 55%;
+		float: right;
+		margin-bottom: 50px;
+	}
+	.writing-holder h4 {
+		color: $colorType;
+	}
+	.writing-holder p {
+		color: $colorSilver;
+	}
+}
+
+.mail-out {
+	padding: 65px 0;
+	background: $colorLightGreen;
+
+	h2 {
+		color: #fff;
+		border-bottom: 2px solid $colorGreen;
+		display: inline-block;
+		padding-bottom: 4px;
+	}
+}
+
+.small-discovery {
+	height: auto;
+	padding-bottom: 60px;
+
+	.discovery-item:hover p {
+		color: $colorBlue;
+	}
+
+	h4 {
+		margin: 40px 0;
+		color: $colorType;
+		border-bottom: 2px solid $colorRed;
+		display: inline-block;
+	}
+
+	h3 {
+		margin: 30px 0;
+		font-size: 1em;
+	}
+
+	p {
+		margin: 0;
+		display: inline-block;
+		padding: 0;
+		border-bottom: 2px solid $colorBlue;
+	}
+}
+
+.gallery {
+	padding-bottom: 30px;
+
+	.image {
+		margin-bottom: 30px;
+	}
+}

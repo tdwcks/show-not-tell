@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag 'site' %>
+    <title>Show Not Tell<%= ' - ' + current_article.title unless current_article.nil? %></title>
+    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+  </head>
+  <body>
+      <header>
+          <div class="grid-container">
+            <div class="row">
+              <div class="col-6">
+                <a href="/"><h1>Show Not Tell</h1></a>
+                <h1 class="page-title"><%= current_article.title unless current_article.nil? %></h1>
+              </div>
+             <div class="burger-holder">
+                <div class="hamburger">
+                    <div class="burger line-1"></div>
+                    <div class="burger line-2"></div>
+                    <div class="burger line-3"></div>
+                </div>
+              </div>
+              <div class="col-6">
+                <nav>
+                  <ul>
+                    <li><%= link_to 'Collections', '/collections' %></li>
+                    <li><%= link_to 'About', '/about' %></li>
+                    <li><%= link_to 'Blog', '/blog' %></li>
+                    <li class="cta"><%= link_to 'Suggest Collection', '/suggest' %></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+      </header>
+      <article class="blog">
+        <section class="hero">
+          <img data-original="../../images/journal/<%= current_article.slug %>/1.jpg" class="lazy">
+        </section>
+        <section class="writing">
+          <div class="grid-container">
+            <div class="col-6">
+              <h2><%= current_article.data.subtitle %></h2>
+            </div>
+            <div class="col-6">
+            <%= yield %>
+            </div>
+          </div>
+        </section>
+      </article>
+      <footer>
+        <div class="grid-container">
+          <div class="row">
+            <div class="col-3">
+              <h4>Show Not Tell</h4>
+              <p>The Media Centre, </br>7 Northumberland Street, </br>Huddersfield, </br>HD1 1RL </p>
+            </div>
+            <div class="col-3">
+              <h4>Get In Touch</h4>
+              <a href="tel:01484 599333">01484 599333</a>
+              <a href="mailto:info@show-not-tell.com">info@show-not-tell.com</a>
+            </div>
+            <div class="col-3">
+              <h4>Social</h4>
+              <a class="twitter" href="tel:01484 599333">Twitter</a>
+              <a class="facebook" href="mailto:info@show-not-tell.com">Facebook</a>
+              <a class="email" href="mailto:info@show-not-tell.com">Instagram</a>
+            </div>
+            <div class="col-3">
+              <h4>Terms and Conditions</h4>
+              <p>&#169; Show Not Tell <%= Date.today.year %></p>
+              <p class="miln">Show Not Tell is a project <a href="www.miln.co">Made By Miln</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+      <%= javascript_include_tag 'global' %>
+      <script>
+        $("img.lazy").lazyload({
+            effect : "fadeIn"
+        });
+      </script>
+  </body>
+</html>

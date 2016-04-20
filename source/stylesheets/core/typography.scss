@@ -1,0 +1,97 @@
+// =================================================================
+//  Show Not Tell
+//  Typography
+// =================================================================
+
+
+// 		Weights
+// =================================================================
+	$light:	100;
+	$regular: 400;
+	$bold: 600;
+
+	$font-path: '/stylesheets/fonts/' !default;
+
+	// 		Font Face yeah
+	// =================================================================
+
+	@include font-face(GT, fonts/GT-Walsheim-Regular);
+
+// 		Base Font
+// =================================================================
+	$base-font-family: "GT", sans-serif;
+	$base-font-weight: $regular;
+	$base-line-height: 1.4;
+
+// 		Headings
+// =================================================================
+
+body {
+	  font-family: $base-font-family;
+	  font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: inherit;
+  color: $colorType;
+  line-height: 1.2;
+}
+
+h1 {
+  	 font-size: 2.074em;
+}
+
+h2 {
+	font-size: 1.728em;
+}
+
+h3 {
+	font-size: 1.44em;
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: 0.833em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+p {
+	color: $colorType;
+	line-height: 1.35em;
+	padding: 0.4em 0 0.4em 0;
+}
+
+p.serif {
+	font-size: 1.1em;
+}
+
+p.large {
+	font-size: 1.5em;
+}
+
+ol, ul {
+	padding: 0.3em 0 0.3em 0;
+}
+
+li {
+	margin: 0.3em 0 0.3em;
+}
+
+ol li {
+	list-style-type: decimal;
+}
+
+ul li {
+	list-style-type: disc;
+}
+
+span {
+	color: $colorSilver;
+	font-size: 0.85em;
+}
+
+small, .font_small {font-size: 0.8em;}

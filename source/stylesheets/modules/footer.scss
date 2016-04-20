@@ -1,0 +1,71 @@
+// =================================================================
+//  Show Not Tell
+//  Footer
+// =================================================================
+
+footer {
+	width: 100%;
+	border-top: 1px solid $colorLines;
+	padding: 50px 0;
+
+	h4 {
+		color: $colorBlue;
+		margin-bottom: 20px;
+	}
+
+	p, a {
+		padding: 0;
+		color: lighten($colorType, 20%);
+	}
+
+	a {
+		line-height: 1.4;
+		display: block;
+
+		&:hover {
+			color: $colorBlue;
+		}
+	}
+
+	a.twitter:hover {
+		color: #4099ff;
+	}
+
+	a.facebook:hover {
+		color: #3b5998;
+	}
+
+	.miln {
+		margin-top: 10px;
+
+		a {
+			border-bottom: 2px solid $colorBlue;
+			display: inline-block;
+		}
+	}
+
+	@include mq("small", "max-width") {
+		padding: 50px 0 10px 0;
+		
+		.col-3 {
+			@include span-columns(6);
+			margin-bottom: 30px;
+		}
+
+		h4 {
+			margin-bottom: 10px;
+		}
+
+		.col-3:nth-child(2) {
+			margin-right: 0;
+		}
+	}
+
+	@include mq("extra-small", "max-width") {
+		.col-3 {width: 100%;}
+
+		.miln {
+			margin-top: 4px;
+		}
+	}
+}
