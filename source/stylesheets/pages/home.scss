@@ -134,6 +134,30 @@
 .post-office .hero {
 	padding: 50px 0 75px 0;
 	background: $colorRed;
+	position: relative;
+	overflow: hidden;
+
+	#map {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		z-index: 1;
+	}
+
+	.graph-holder, .statistic-holder {
+		position: relative;
+		z-index: 2;
+	}
+
+	.graph-holder {
+		margin-top: 30px;
+	}
+
+	@include mq("extra-small", "max-width") { 
+		padding-bottom: 25px;
+	}
 }
 
 .post-office #map { position:absolute; top:0; bottom:0; width:100%; z-index: -5;}
