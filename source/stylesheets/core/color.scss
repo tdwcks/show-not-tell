@@ -21,6 +21,9 @@ $colorType: #353535;
 $colorBg: #efefef;
 $colorLines: #E3E9ED;
 
+.bg-white { background: #fff; }
+.fg-white { color: #fff; }
+
 .bg-blue { background: $colorBlue; }
 .fg-blue { color: $colorBlue; }
 

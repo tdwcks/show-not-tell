@@ -3,6 +3,36 @@
 //  Home
 // =================================================================
 
+.home .hero {
+	padding: 50px 0 75px 0;
+	background: $colorLightGreen;
+	position: relative;
+	overflow: hidden;
+
+	.col-4 {
+		position: relative;
+		z-index: 1;
+		padding: 110px 0;
+
+		h3 {
+			padding: 5px 0;
+		}
+
+		h3.fg-green {
+			color: darken($colorGreen, 5%);
+		}
+	}
+
+	#map {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		z-index: 1;
+	}
+}
+
 .junior-doctors {
 	.hero {
 		padding: 50px 0;
