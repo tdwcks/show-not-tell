@@ -1,0 +1,15 @@
+---
+title: How to Download one of our Apps
+subtitle: At the moment we distribute our apps through Apple’s Test Flight. Here’s how you get them on your phone. 
+slug: download-apps
+date: 2016-04-25
+---
+
+1 - Add your email to the collection we will email you a link to the relevant app.
+
+2 - Download Apple’s Test Flight. This is Apple’s own software which allows us to try things out quicker. 
+
+3 - Follow the download link we send you and download the app. After that it will work on your phone straight away. 
+
+We distribute our apps like this because it allows us to test ideas, iterate quickly and get feedback.
+
