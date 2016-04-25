@@ -75,13 +75,29 @@ color: fg-red
   <section class="writing">
     <div class="grid-container">
       <div class="col-6">
-        <h2>We use the information your phone is already collecting about you to fuel a political campaign.</h2>
+        <h2>Post offices in Crouch End are being put forward for private franchises and if no franchisee is found to take them on, there is a danger they could close.</h2>
       </div>
       <div class="col-6">
-      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
-      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
-      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
-      <%= link_to 'Read More', '/about' %>
+      <p>There is a <a href="http://goo.gl/forms/YUnkLFJq8e">petition</a> to save Crouch End Post Office but anyone can sign a petition right? So we wanted to provide the opportunity for people to take a positive action to show how valuable the post office is to the local community.</p>
+      <p>The app uses the location feature on your iPhone registering a visit whenever you go inside the post office. As soon as we’ve registered a visit we send out a slack message and a tweet to show that a visit has been registered and that the post office is still in use.</p>
+      <p>We also store the visit in a database which allows us to display the number of visits above and gives us the potential to use it later on.</p>
+      <p>The app only stores any information when you step inside the post office so we won’t find out about your extra marital affair.</p>
+      </div>
+    </div>
+  </section>
+  <section id="sign-up" class="mail-out">
+    <div class="grid-container">
+      <div class="row">
+        <div class="col-6">
+          <h2>Enter your email address to get the app</h2>
+        </div>
+        <div class="col-6">
+            <form action="//show-not-tell.us13.list-manage.com/subscribe/post?u=67b8136f07a7592b8fe597658&amp;id=7f8ba81803" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67b8136f07a7592b8fe597658_4a38ba6576" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Get App" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -113,20 +129,58 @@ color: fg-red
   		</div>
   	</div>
   </section>
-  <section class="mail-out">
-    <div class="grid-container">
-      <div class="row">
-        <div class="col-6">
-          <h2>Get mail about future collections</h2>
-        </div>
-        <div class="col-6">
-            <form action="//show-not-tell.us13.list-manage.com/subscribe/post?u=67b8136f07a7592b8fe597658&amp;id=4a38ba6576" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_67b8136f07a7592b8fe597658_4a38ba6576" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 </article>
+<script>
+	$( document ).ready(function() {
+	  fly();
+	});
+
+	mapboxgl.accessToken = 'pk.eyJ1IjoidGR3Y2tzIiwiYSI6IlhwMGlGR28ifQ.irq5Rbn1WvGb_VIwn1auNA';
+	var start = [-0.1477, 51.5797];
+	var end = [-0.1337, 51.5797];
+	var map = new mapboxgl.Map({
+	    container: 'map',
+	    style: 'mapbox://styles/tdwcks/cina5gtzn00jhcxnhutml4up4',
+	    // style: 'mapbox://styles/mapbox/streets-v8',
+	    attributionControl: false,
+	    center: start,
+	    zoom: 16,
+	    interactive: false,
+	    "layers": [ 
+	    {
+	      "geojson-marker": {
+	        'id': 'museums',
+	        'type': 'circle',
+	        'source': 'museums',
+	        'layout': {
+	            'visibility': 'visible'
+	        },
+	        'paint': {
+	            'circle-radius': 8,
+	            'circle-color': 'rgba(55,148,179,1)'
+	        },
+	        "geometry": {
+	          "type": "Point",
+	          "coordinates": [-0.1537, 51.5797]
+	        }
+	      }
+	    }
+	  ]
+	});
+
+	var isAtStart = true;
+
+	function fly() {
+	    var target = isAtStart ? end : start;
+	    isAtStart = !isAtStart;
+	    map.flyTo({
+	        center: target,
+	        zoom: 16,
+	        bearing: 0,
+	        speed: 0.01, 
+	        easing: function (t) {
+	            return t;
+	        }
+	    });
+	}
+</script>

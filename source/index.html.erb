@@ -16,7 +16,7 @@
       <div class="col-6">
       <p>Everyday the devices we carry collect information about our location, health, social life, sleep patterns, fitness and more.</p>
       <p>Through the creative communication of data, designers, journalists, and activists can raise awareness of controversial issues and events in an impactful and immediate way.</p>
-      <p>We facilitate this process by making ourselves and providing the tools for others to make ultra simple applications which collects and communicates data relevant to an individual campaigns.</p>
+      <p>We facilitate this process by making and providing the tools for others to make ultra simple applications which collects and communicates data relevant to an individual campaigns.</p>
       <%= link_to 'Read More', '/about' %>
       </div>
     </div>
@@ -27,7 +27,7 @@
         <div class="col-6">
           <a href="/post-office" class="discovery-item">
             <div class="image bg-hot">
-              <img data-original="images/post-office/1.jpg" class="lazy">
+              <img data-original="images/post-office/3.jpg" class="lazy">
             </div>
             <div class="statistics-holder">
               <span>Live Now</span>
@@ -121,4 +121,58 @@
       </div>
     </div>
   </section>
-</article> 
+</article>
+<script>
+  $( document ).ready(function() {
+    fly();
+  });
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoidGR3Y2tzIiwiYSI6IlhwMGlGR28ifQ.irq5Rbn1WvGb_VIwn1auNA';
+  var start = [-0.131758, 51.507351];
+  var end = [-0.127758, 51.507351];
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/tdwcks/cinczezx500yvx9nom0uo3cym',
+      // style: 'mapbox://styles/mapbox/streets-v8',
+      attributionControl: false,
+      center: start,
+      zoom: 16,
+      interactive: false,
+      "layers": [ 
+      {
+        "geojson-marker": {
+          'id': 'museums',
+          'type': 'circle',
+          'source': 'museums',
+          'layout': {
+              'visibility': 'visible'
+          },
+          'paint': {
+              'circle-radius': 8,
+              'circle-color': 'rgba(55,148,179,1)'
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-0.127758, 51.507351]
+          }
+        }
+      }
+    ]
+  });
+
+  var isAtStart = true;
+
+  function fly() {
+      var target = isAtStart ? end : start;
+      isAtStart = !isAtStart;
+      map.flyTo({
+          center: target,
+          zoom: 16,
+          bearing: 0,
+          speed: 0.01, 
+          easing: function (t) {
+              return t;
+          }
+      });
+  }
+</script>

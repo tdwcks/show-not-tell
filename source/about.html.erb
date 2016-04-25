@@ -1,21 +1,21 @@
 ---
 title: About
-color: fg-purple
+color: fg-hot
 ---
 
 <article class="about">
 	<section class="hero">
-		<img data-original="../../images/about/3.jpg" class="lazy">
-  	</section>
+	   <div id="map"></div>
+  </section>
   <section class="writing">
     <div class="grid-container">
       <div class="col-6">
         <h2>We use the information your phone is already collecting about you to fuel a political campaign.</h2>
       </div>
       <div class="col-6">
-      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
-      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
-      <p>We are a research and technology company that helps organisations that do good, think smarter – and make more of a difference. We work across different sectors and with many types of organisation – charities, social businesses and government.</p>
+      <p>Everyday the devices we carry collect information about our location, health, social life, sleep patterns, fitness and more.</p>
+      <p>Through the creative communication of data, designers, journalists, and activists can raise awareness of controversial issues and events in an impactful and immediate way.</p>
+      <p>We facilitate this process by making and providing the tools for others to make ultra simple applications which collects and communicates data relevant to an individual campaigns.</p>
       </div>
     </div>
   </section>
@@ -35,6 +35,27 @@ color: fg-purple
   		</div>
   	</div>
   </section>
+  <section class="writing bottom">
+    <div class="grid-container">
+      <div class="col-6">
+        <h4>Is it free?</h4>
+      <p>Yes, all the apps we work with are free as we want to make it as easy as possible for people to get involved.</p>
+      <h4>What happens to my data?</h4>
+      <p>Your data will be used as part of the campaign that you want it to be. That’s one of the reasons we make lot’s of little applications rather than one big one so that we’re not collecting data that isn’t relevant to the campaigns you don’t want to support.</p>
+      <p>Each app will clearly state what information it will collect and you can stop it collecting at any point.</p>
+      <h4>Who are you?</h4>
+      <p>We’re a group of designers and developers who practice in the design department of <a href="http://www.gold.ac.uk">Goldsmiths University</a> we also make websites and apps at <a href="http://www.miln.co">Miln</a>.</p>
+      </div>
+      <div class="col-6">
+      <h4>Who is it for?</h4>
+      <p>Collections are usually open to anyone but there are some collections which are specific to certain people, if this is the case we’ll tell you before you get involved.</p>
+      <h4>How does data help?</h4>
+      <p>It doesn’t on it’s own. But we know that it can be used to tell a wider story or provide evidence for anecdotal experiences. We work with each campaign to decide how best to communicate that data, whether that takes the form of a shareable meme for Facebook or a more detailed infographic to be used as evidence in a report.</p>
+      <h4>How do I get involved?</h4>
+      <p>Fill <a href="/collections#suggest">this form</a> out and we will respond within 24 hours or email us info@show-not-tell.com</p>
+      </div>
+    </div>
+  </section>
   <section class="mail-out">
     <div class="grid-container">
       <div class="row">
@@ -52,3 +73,58 @@ color: fg-purple
     </div>
   </section>
 </article>
+
+<script>
+  $( document ).ready(function() {
+    fly();
+  });
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoidGR3Y2tzIiwiYSI6IlhwMGlGR28ifQ.irq5Rbn1WvGb_VIwn1auNA';
+  var start = [-0.134606, 51.508596];
+  var end = [-0.124606, 51.508596];
+  var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/tdwcks/cing19dem019mcxnht40bq65q',
+      // style: 'mapbox://styles/mapbox/streets-v8',
+      attributionControl: false,
+      center: start,
+      zoom: 16,
+      interactive: false,
+      "layers": [ 
+      {
+        "geojson-marker": {
+          'id': 'museums',
+          'type': 'circle',
+          'source': 'museums',
+          'layout': {
+              'visibility': 'visible'
+          },
+          'paint': {
+              'circle-radius': 8,
+              'circle-color': 'rgba(55,148,179,1)'
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-0.127758, 51.507351]
+          }
+        }
+      }
+    ]
+  });
+
+  var isAtStart = true;
+
+  function fly() {
+      var target = isAtStart ? end : start;
+      isAtStart = !isAtStart;
+      map.flyTo({
+          center: target,
+          zoom: 16,
+          bearing: 0,
+          speed: 0.01, 
+          easing: function (t) {
+              return t;
+          }
+      });
+  }
+</script>

@@ -9,6 +9,9 @@
     <%= stylesheet_link_tag 'site' %>
     <title>Show Not Tell<%= ' - ' + current_article.title unless current_article.nil? %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
+    <%= javascript_include_tag 'global' %>
   </head>
   <body>
       <header>
@@ -65,68 +68,10 @@
           </div>
         </div>
       </footer>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
-      <%= javascript_include_tag 'global' %>
-      <script>
-        $("img.lazy").lazyload({
-            effect : "fadeIn"
-        });
-      </script>
-      <script>
-
-      $( document ).ready(function() {
-          fly();
+    <script>
+      $("img.lazy").lazyload({
+          effect : "fadeIn"
       });
-
-      mapboxgl.accessToken = 'pk.eyJ1IjoidGR3Y2tzIiwiYSI6IlhwMGlGR28ifQ.irq5Rbn1WvGb_VIwn1auNA';
-        var start = [-0.1477, 51.5797];
-        var end = [-0.1337, 51.5797];
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/tdwcks/cinczezx500yvx9nom0uo3cym',
-            // style: 'mapbox://styles/mapbox/streets-v8',
-            attributionControl: false,
-            center: start,
-            zoom: 16,
-            interactive: false,
-            "layers": [ 
-            {
-              "geojson-marker": {
-                'id': 'museums',
-                'type': 'circle',
-                'source': 'museums',
-                'layout': {
-                    'visibility': 'visible'
-                },
-                'paint': {
-                    'circle-radius': 8,
-                    'circle-color': 'rgba(55,148,179,1)'
-                },
-                "geometry": {
-                  "type": "Point",
-                  "coordinates": [-0.1537, 51.5797]
-                }
-              }
-            }
-          ]
-        });
-
-        var isAtStart = true;
-
-        function fly() {
-            var target = isAtStart ? end : start;
-            isAtStart = !isAtStart;
-            map.flyTo({
-                center: target,
-                zoom: 16,
-                bearing: 0,
-                speed: 0.01, 
-                easing: function (t) {
-                    return t;
-                }
-            });
-        }
-      </script>
+    </script>
   </body>
 </html>

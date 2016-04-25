@@ -94,8 +94,32 @@
 	}
 }
 
+.about .writing h4 {
+	color: $colorHot;
+}
+
+.about .writing a {
+	color: $colorHot;
+	border-bottom: 0;
+	display: inline;
+}
+
+.about .bottom {
+	padding: 0;
+	padding-bottom: 75px;
+}
+
 .about .hero {
 	background: $colorPurple;
+
+	#map {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		z-index: 1;
+	}
 }
 
 .journal .small-discovery {
@@ -191,3 +215,16 @@
 }
 
 .post-office #map { position:absolute; top:0; bottom:0; width:100%; z-index: -5;}
+
+.post-office .mail-out {
+	background: $colorRed;
+	margin-bottom: 30px;
+
+	h2 {
+		border-bottom: 2px solid $colorYellow;
+	}
+
+	input[type=submit] {
+		background: $colorYellow;
+	}
+}
